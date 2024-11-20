@@ -10,7 +10,7 @@ const slides = [
     title: "Summer Sale Collections",
     description: "Sale! Up to 50% off!",
     img: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "/",
+    url: "/list",
     bg: "bg-gradient-to-r from-yellow-50 to-pink-50",
   },
   {
@@ -18,7 +18,7 @@ const slides = [
     title: "Winter Sale Collections",
     description: "Sale! Up to 50% off!",
     img: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "/",
+    url: "/list",
     bg: "bg-gradient-to-r from-pink-50 to-blue-50",
   },
   {
@@ -26,20 +26,20 @@ const slides = [
     title: "Spring Sale Collections",
     description: "Sale! Up to 50% off!",
     img: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "/",
+    url: "/list",
     bg: "bg-gradient-to-r from-blue-50 to-yellow-50",
   },
 ];
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  //   }, 3000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 7000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="h-[calc(100vh-80px)] overflow-hidden">
       <div
